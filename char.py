@@ -1,4 +1,5 @@
 import time
+
 class Char(Widget):
     def __init__(self):
         super(StartScreen, self).__init__()
