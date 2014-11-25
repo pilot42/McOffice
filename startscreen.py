@@ -8,7 +8,7 @@ from kivy.clock import Clock
 from kivy.graphics import Rectangle, Ellipse, Line
 
 NOTEXTURE = "assets/NOTEXTURE.png"
-
+from Door import Door
 
 class StartScreen(Widget):
     def __init__(self):
@@ -17,7 +17,7 @@ class StartScreen(Widget):
         self.add_widget(self.layout)
         #Creating Widgets
         self.background = Image(
-            source=NOTEXTURE,
+            source="assets/morgan-freeman.jpg",
             texture_size=Window.size,
             size=Window.size,
             allow_stretch=True,
@@ -67,6 +67,7 @@ class StartScreen(Widget):
             texture_size=(20, 20),
             size=(20, 20)
         )
+	self.door = Door()
         #Adding Widgets
         self.layout.add_widget(self.background)
         self.layout.add_widget(self.logo)
@@ -75,7 +76,7 @@ class StartScreen(Widget):
         self.layout.add_widget(self.settingsButton)
         self.layout.add_widget(self.optionsButton)
         self.layout.add_widget(self.mouseTexture)
-
+	self.layout.add_widget(self.door)
         Clock.schedule_interval(self.update, 1.0 / 60.0)
 
     def update(self, *args):
