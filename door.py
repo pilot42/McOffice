@@ -11,11 +11,11 @@ class Door (Widget):
 		super(Door, self).__init__()
 		self.layout = FloatLayout()
 		self.add_widget(self.layout)
-		self.sprite = Image (
-			source = "assets/morgan-freeman.jpg",
-			texture_size=(40,40),
-			size=(200,200),
-		)
-		self.x = 0
+            source="assets/morgan-freeman.jpg",
+            texture_size=(300, 600),
+            size=(300, 600),
+            center_x=Window.width / 2,
+            center_y=(Window.height / 2) + 150
+        )
 		self.y = 0
 		self.layout.add_widget(self.sprite)
